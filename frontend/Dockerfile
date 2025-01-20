@@ -3,9 +3,13 @@ FROM node:18
 
 WORKDIR /app
 
-COPY ./econome .
+COPY package*.json ./
+
+RUN npm install -g @angular/cli@19
 
 RUN npm install
+
+COPY . .
 
 EXPOSE 4200
 
